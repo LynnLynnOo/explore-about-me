@@ -2,9 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Lynn!</title>
     <style>
         body,
         html {
@@ -16,6 +13,19 @@
             color: #e0e0e0;
             display: flex;
             flex-direction: column;
+        }
+
+        .paragraph-body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-align: justify;
         }
 
         .header {
@@ -58,8 +68,10 @@
         .signin {
             display: flex;
             align-items: center;
+            justify-content: center;
             cursor: pointer;
             transition: color 0.3s;
+            margin-top: 40px;
         }
 
         .signin:hover {
@@ -84,7 +96,7 @@
         .intro {
             max-width: 800px;
             background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
             flex: 1;
             margin-bottom: 20px;
@@ -143,6 +155,7 @@
 
         footer p {
             margin: 5px 0;
+            font-size: 14px;
         }
 
         /* Media Queries for Responsive Design */
@@ -156,16 +169,6 @@
             .header h1 {
                 color: #4a90e2;
                 margin: 10px 0;
-                /* Reduced top and bottom margin */
-            }
-
-            .signin {
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-                transition: color 0.3s;
-                margin-bottom: 10px;
-                /* Added space below Sign In */
             }
 
             .intro h1 {
@@ -187,16 +190,6 @@
             .header h1 {
                 color: #4a90e2;
                 margin: 10px 0;
-                /* Reduced top and bottom margin */
-            }
-
-            .signin {
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-                transition: color 0.3s;
-                margin-bottom: 10px;
-                /* Added space below Sign In */
             }
 
             .intro h1 {
@@ -223,6 +216,11 @@
         }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Lynn!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -239,44 +237,47 @@
                 </ul>
             </nav>
         </div>
-        <div class="signin">
-            <i class="fas fa-sign-in-alt"></i> Sign In
-        </div>
     </header>
     <div class="main">
         <div class="image-container">
-            <!-- <img src="https://placekitten.com/400/400" alt="Profile" /> -->
             &emsp13;
         </div>
         <div class="intro">
             <h2>Hello, My name is</h2>
             <h1>Lynn Lynn Oo</h1>
             <h3>Full Stack Software Engineer</h3>
-            <p>A dynamic Software Engineer with over six years of experience, currently leading a Software Development
-                Team.
-                <br /><br /><br />
+            <p class="paragraph-body">With over six years of experience as a dynamic Full Stack Developer, I am
+                currently leading a Software Development Team.
+                My career has been marked by excellence in web applications development and the transformation of manual
+                workflows
+                into efficient digital and automated systems.
+                My deep expertise in the SDLC, combined with my leadership, management and organizational skills,
+                consistently
+                yields exceptional results, allowing me to bring a unique blend of talents to each project and ensure
+                success.<br />
 
-                Throughout my career, I have excelled in web developments and in transforming manual workflows into
-                seamless digital and automated processes. My extensive experience in SDLC, organizing, leading, and
-                managing teams consistently delivers outstanding results, showcasing my ability to drive projects to
-                success and bring a unique blend of skills to the table.
-                <br /><br /><br />
                 I am always eager to learn new technologies, which keeps me at the forefront of innovation and enhances
-                my ability to deliver cutting-edge solutions.
-                <br /><br /><br />
-                Sign in to explore more about me ......
-            </p>
-            <!-- <button>Download CV</button> -->
+                my ability to deliver cutting-edge solutions.</p>
+
+            <p class="paragraph-body">🔓 Unlock the story! Sign in to dive deeper into my journey, hobbies, and fun
+                facts. 📖</p>
+
+            <div class="signin">
+                <i class="fas fa-sign-in-alt"></i> Dive In
+            </div>
         </div>
+
     </div>
+
     <footer>
         <ul>
-            <li>LinkedIn</li>
-            <li>Twitter</li>
-            <li>Facebook</li>
-            <li>Instagram</li>
+            <li><a href="https://www.linkedin.com/in/llynnlynnoo/" target="_blank">linkedin</a></li>
+            <li><a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
+            <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/llynnlynnoo/profilecard/?igsh=b2N3MW5IcHFoZmNp"
+                    target="_blank">Instagram</a></li>
         </ul>
-        <p>&copy; 2024 Lynn Lynn Oo</p>
+        <p>© 2024 LynnLynnOo. All rights reserved.</p>
         <p> <a href="privacy-policy.html" target="_top">Privacy Policy</a></p>
     </footer>
 </body>
