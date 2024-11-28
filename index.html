@@ -26,7 +26,7 @@
             flex-direction: column;
         }
 
-        .paragraph-body {
+        /* .paragraph-body {
             font-family: 'Roboto', sans-serif;
             font-size: 1.1em;
             line-height: 1.6;
@@ -36,7 +36,7 @@
             border-radius: 8px;
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
+        } */
 
         .header {
             padding: 20px;
@@ -73,6 +73,51 @@
 
         .header nav ul li:hover {
             color: #4a90e2;
+        }
+
+        /* Navigation link styles */
+        .header nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        /* Active state styling */
+        .header nav ul li a.active {
+            color: #4a90e2;
+        }
+
+        .header nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #4a90e2;
+        }
+
+        /* Hover effect */
+        .header nav ul li a:hover {
+            color: #4a90e2;
+        }
+
+        /* Underline animation effect */
+        .header nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #4a90e2;
+            transition: width 0.3s ease;
+        }
+
+        .header nav ul li a:hover::after {
+            width: 100%;
         }
 
         .signin {
@@ -245,6 +290,57 @@
         .hide-for-now {
             display: none;
         }
+
+        .paragraph-body {
+            /* Basic text styling */
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #e0e0e0;
+
+            /* Spacing */
+            margin: 2rem auto;
+            padding: 0 20px;
+            max-width: 800px;
+
+            /* Paragraph spacing */
+            text-align: justify;
+            /* text-indent: 2em; */
+            /* First line indent */
+        }
+
+        .paragraph-body br {
+            /* Add extra space after line breaks */
+            content: "";
+            display: block;
+            margin-bottom: 1.5em;
+        }
+
+        /* For better readability on different screen sizes */
+        @media screen and (max-width: 768px) {
+            .paragraph-body {
+                font-size: 14px;
+                padding: 0 15px;
+                margin: 1.5rem auto;
+            }
+        }
+
+        /* Optional: Add a subtle animation when the content loads */
+        .paragraph-body {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <meta charset="UTF-8">
@@ -326,16 +422,60 @@
                 console.profileEnd(devtools);
             }, 1000);
         })();
+
+        <script>
+    // Add this script just before the closing </body> tag
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get current page URL
+            const currentPage = window.location.pathname.split('/').pop();
+
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('.header nav ul li a');
+
+            // Remove all active classes first
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+
+                // Get the href value and compare with current page
+                const href = link.getAttribute('href');
+                if (href === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Special case for index.html or root path
+            if (currentPage === '' || currentPage === 'index.html') {
+                document.querySelector('a[href="index.html"]').classList.add('active');
+            }
+        });
+
+        // Add click handler to maintain active state
+        document.querySelectorAll('.header nav ul li a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                // Skip for download link
+                if (this.hasAttribute('download')) return;
+
+                // Remove all active classes
+                document.querySelectorAll('.header nav ul li a').forEach(l => {
+                    l.classList.remove('active');
+                });
+
+                // Add active class to clicked link
+                this.classList.add('active');
+            });
+        });
+    </script>
+
     </script>
     <header class="header">
         <div class="header-left">
             <h1 class="calligraphy">LynnHere!</h1>
             <nav>
                 <ul>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Download Resume</li>
-                    <li>Blog</li>
+                    <li><a href="index.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <!-- <li><a href="resume.pdf" download>Download Resume</a></li> -->
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </nav>
         </div>
