@@ -234,6 +234,13 @@
                 margin-bottom: 10px;
             }
         }
+
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <meta charset="UTF-8">
@@ -244,6 +251,78 @@
 </head>
 
 <body>
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Disable key combinations
+        document.addEventListener('keydown', function (e) {
+            // Prevent F12
+            if (e.keyCode === 123) {
+                e.preventDefault();
+            }
+            // Prevent Ctrl+Shift+I (Chrome, Firefox, Edge)
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                e.preventDefault();
+            }
+            // Prevent Ctrl+Shift+J (Chrome, Edge)
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+                e.preventDefault();
+            }
+            // Prevent Ctrl+U (View Source)
+            if (e.ctrlKey && e.keyCode === 85) {
+                e.preventDefault();
+            }
+            // Prevent Ctrl+Shift+C (Chrome, Firefox, Edge - Inspect Element)
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+                e.preventDefault();
+            }
+            // Prevent Ctrl+Shift+K (Firefox - Web Console)
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 75) {
+                e.preventDefault();
+            }
+            // Prevent Ctrl+Shift+S (Safari - Web Inspector)
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 83) {
+                e.preventDefault();
+            }
+            // Prevent Cmd+Option+I (Mac - Chrome, Firefox, Safari)
+            if (e.metaKey && e.altKey && e.keyCode === 73) {
+                e.preventDefault();
+            }
+            // Prevent Cmd+Option+J (Mac - Chrome)
+            if (e.metaKey && e.altKey && e.keyCode === 74) {
+                e.preventDefault();
+            }
+            // Prevent Cmd+Option+C (Mac - Chrome, Firefox, Safari - Inspect Element)
+            if (e.metaKey && e.altKey && e.keyCode === 67) {
+                e.preventDefault();
+            }
+            // Prevent Cmd+Option+K (Mac - Firefox - Web Console)
+            if (e.metaKey && e.altKey && e.keyCode === 75) {
+                e.preventDefault();
+            }
+        });
+
+        // DevTools detection
+        (function () {
+            let devtools = function () { };
+            devtools.toString = function () {
+                if (this.opened) return;
+                this.opened = true;
+
+                //alert("Developer Tools are not allowed :-( !");
+                //window.location.href = "about:blank";
+            }
+
+            setInterval(function () {
+                console.profile(devtools);
+                console.profileEnd(devtools);
+            }, 1000);
+        })();
+    </script>
     <header class="header">
         <div class="header-left">
             <h1 class="calligraphy">LynnHere!</h1>
