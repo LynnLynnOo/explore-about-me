@@ -259,42 +259,75 @@
         }
 
         @media (max-width: 768px) {
-            .main {
-                flex-direction: column;
-                align-items: center;
-                padding: 20px;
-            }
 
             .contact-item {
                 font-size: 0.9em;
             }
 
-            .header nav ul,
+            .main {
+                flex-direction: column;
+                align-items: center;
+                padding: 0px 20px 20px 20px;
+            }
+
+            .header h1 {
+                color: #4a90e2;
+                margin: 10px 0;
+            }
+
+            .intro h1 {
+                font-size: 2em;
+            }
+
+            .header nav ul {
+                flex-direction: row;
+                align-items: left;
+            }
+
             .header-left {
                 flex-direction: row;
                 align-items: left;
             }
+
         }
 
         @media (max-width: 480px) {
+
+            .contact-item {
+                font-size: 0.8em;
+            }
+
+            .header h1 {
+                color: #4a90e2;
+                margin: 10px 0;
+            }
+
+            .intro h1 {
+                font-size: 1.5em;
+            }
+
             .intro {
-                padding: 10px;
+                padding: 22px 51px 22px 22px;
+                ;
             }
 
             .header {
                 padding: 10px;
             }
 
-            .contact-item {
-                font-size: 0.8em;
-            }
-
             .header nav ul {
                 gap: 10px;
+                flex-direction: row;
+                align-items: left;
             }
 
             footer ul {
                 gap: 10px;
+            }
+
+            .signin {
+                margin-top: 25px;
+                margin-bottom: 10px;
             }
         }
     </style>
@@ -393,6 +426,7 @@
     <header class="header">
         <div class="header-left">
             <h1 class="calligraphy">LynnHere!</h1>
+            &emsp;&emsp;
             <nav>
                 <ul>
                     <li><a href="index.html">About</a></li>
