@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
     <style>
         /* Base Styles */
         body,
@@ -37,17 +36,17 @@
             flex-wrap: wrap;
         }
 
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         .calligraphy {
             font-family: 'Great Vibes', cursive;
             font-size: 35px;
             color: #4a90e2;
             margin: 0;
-        }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 20px;
         }
 
         .header nav ul {
@@ -210,19 +209,19 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .header-left {
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
-            }
-
-            .header nav {
-                width: 100%;
-                margin-top: 10px;
+            .header h1 {
+                color: #4a90e2;
+                margin: 10px 0;
             }
 
             .header nav ul {
-                justify-content: flex-start;
+                flex-direction: row;
+                align-items: left;
+            }
+
+            .header-left {
+                flex-direction: row;
+                align-items: left;
             }
 
             .intro {
@@ -240,41 +239,23 @@
         }
 
         @media (max-width: 480px) {
+            .header h1 {
+                color: #4a90e2;
+                margin: 10px 0;
+            }
+
             .header {
-                padding: 15px;
-            }
-
-            .calligraphy {
-                font-size: 28px;
-            }
-
-            .contact-item {
                 padding: 10px;
-                font-size: 0.9em;
             }
 
-            .contact-item i {
-                font-size: 1.2em;
-            }
-
-            .intro {
-                padding: 15px;
-                width: 100%;
+            .header nav ul {
+                gap: 10px;
+                flex-direction: row;
+                align-items: left;
             }
 
             footer ul {
-                flex-wrap: wrap;
                 gap: 10px;
-            }
-        }
-
-        /* Touch Device Optimization */
-        @media (hover: none) and (pointer: coarse) {
-
-            .contact-form input,
-            .contact-form textarea,
-            .contact-form button {
-                min-height: 44px;
             }
         }
     </style>
@@ -284,6 +265,7 @@
     <header class="header">
         <div class="header-left">
             <h1 class="calligraphy">LynnHere!</h1>
+            &emsp;&emsp;
             <nav>
                 <ul>
                     <li><a href="index.html">About</a></li>
@@ -344,7 +326,6 @@
         document.addEventListener('contextmenu', e => e.preventDefault());
 
         document.addEventListener('keydown', function (e) {
-            // Prevent various keyboard shortcuts
             if (
                 e.keyCode === 123 || // F12
                 (e.ctrlKey && e.shiftKey && e.keyCode === 73) || // Ctrl+Shift+I
@@ -373,7 +354,6 @@
             // Form Submission Handler
             document.getElementById('contactForm').addEventListener('submit', function (e) {
                 e.preventDefault();
-                // Add your form submission logic here
                 alert('Thank you for your message! I will get back to you soon.');
                 this.reset();
             });
