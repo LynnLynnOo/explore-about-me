@@ -218,55 +218,31 @@
             .main {
                 flex-direction: column;
                 align-items: center;
-                padding: 20px;
+                padding: 0px 20px 20px 20px;
             }
 
+            .header h1 {
+                color: #4a90e2;
+                margin: 10px 0;
+            }
 
             .intro h1 {
                 font-size: 2em;
             }
 
-            .signin {
-                margin-top: 25px;
-                margin-bottom: 10px;
+            .header nav ul {
+                flex-direction: row;
+                align-items: left;
             }
 
             .header-left {
-                flex-direction: column;
-                width: 100%;
-                align-items: flex-start;
-                /* Align items to the left */
+                flex-direction: row;
+                align-items: left;
             }
 
-            .header nav {
-                width: 100%;
-            }
-
-            .header nav ul {
-                justify-content: flex-start;
-                /* Align nav items to the left */
-                margin-top: 10px;
-                padding-left: 0;
-                /* Remove default padding */
-            }
-
-            .header h1 {
-                margin: 0;
-                text-align: left;
-                /* Align h1 to the left */
-                width: 100%;
-                color: #4a90e2;
-            }
-
-            .calligraphy {
-                margin: 10px 0;
-                text-align: left;
-                /* Align calligraphy text to the left */
-            }
-
-            /* Adjust spacing between nav items */
-            .header nav ul li {
-                margin-right: 15px;
+            .signin {
+                margin-top: 25px;
+                margin-bottom: 10px;
             }
         }
 
@@ -284,6 +260,15 @@
                 padding: 10px;
             }
 
+            .header {
+                padding: 10px;
+            }
+
+            .header nav ul {
+                gap: 10px;
+                flex-direction: row;
+                align-items: left;
+            }
 
             footer ul {
                 gap: 10px;
@@ -292,22 +277,6 @@
             .signin {
                 margin-top: 25px;
                 margin-bottom: 10px;
-            }
-
-            .header nav ul {
-                flex-wrap: wrap;
-                justify-content: flex-start;
-                /* Keep nav items left-aligned */
-            }
-
-            .header nav ul li {
-                margin: 5px 15px 5px 0;
-                /* Add right margin to nav items */
-            }
-
-            .header {
-                padding: 15px;
-                /* Add some padding to the header */
             }
         }
 
@@ -382,7 +351,7 @@
 </head>
 
 <body>
-    <script>
+    <!-- <script>
         // Disable right-click
         document.addEventListener('contextmenu', function (e) {
             e.preventDefault();
@@ -494,7 +463,7 @@
                 this.classList.add('active');
             });
         });
-    </script>
+    </script> -->
 
     <header class="header">
         <div class="header-left">
