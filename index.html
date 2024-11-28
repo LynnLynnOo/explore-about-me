@@ -85,6 +85,18 @@
         }
 
         /* Active state styling */
+        /* Base styles for navigation links */
+        .header nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+            display: inline-block;
+            /* Add this */
+        }
+
+        /* Active state styling */
         .header nav ul li a.active {
             color: #4a90e2;
         }
@@ -97,27 +109,6 @@
             bottom: -5px;
             left: 0;
             background-color: #4a90e2;
-        }
-
-        /* Hover effect */
-        .header nav ul li a:hover {
-            color: #4a90e2;
-        }
-
-        /* Underline animation effect */
-        .header nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #4a90e2;
-            transition: width 0.3s ease;
-        }
-
-        .header nav ul li a:hover::after {
-            width: 100%;
         }
 
         .signin {
@@ -244,6 +235,16 @@
                 margin-top: 25px;
                 margin-bottom: 10px;
             }
+
+            .header nav ul li a {
+                padding: 10px 5px;
+                /* Add more padding for better touch targets */
+            }
+
+            .header nav ul li a.active::after {
+                bottom: 0;
+                /* Adjust the underline position for mobile */
+            }
         }
 
         @media (max-width: 480px) {
@@ -277,6 +278,36 @@
             .signin {
                 margin-top: 25px;
                 margin-bottom: 10px;
+            }
+        }
+
+        /* Hover effect */
+        @media (hover: hover) {
+
+            /* Only apply hover effects on devices that support hover */
+            .header nav ul li a:hover {
+                color: #4a90e2;
+            }
+
+            .header nav ul li a::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                background-color: #4a90e2;
+                transition: width 0.3s ease;
+            }
+
+            .header nav ul li a:hover::after {
+                width: 100%;
+            }
+        }
+
+        @media (hover: none) {
+            .header nav ul li a:active {
+                color: #4a90e2;
             }
         }
 
